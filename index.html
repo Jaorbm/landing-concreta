@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Greatness Agency - Concrēta</title>
+
+  <!-- Fuente moderna -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: #0a192f;
+    }
+
+    /* Fondo dinámico */
+    body::before {
+      content: "";
+      background: linear-gradient(rgba(10,25,47,0.85), rgba(0,31,63,0.9)),
+                  url("https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80");
+      background-attachment: fixed;
+      background-position: center;
+      background-size: cover;
+      position: fixed;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: -1;
+    }
+
+    header {
+      text-align: center;
+      padding: 30px 20px;
+    }
+    header img {
+      max-width: 200px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      min-height: 70vh;
+      padding: 60px 20px;
+      gap: 40px;
+    }
+
+    /* Texto minimalista */
+    .info {
+      flex: 1;
+      min-width: 280px;
+      max-width: 450px;
+      padding: 10px;
+    }
+    .info h2 {
+      font-size: 30px;
+      font-weight: 700;
+      color: #38bdf8;
+      margin-bottom: 20px;
+    }
+    .info p {
+      font-size: 17px;
+      font-weight: 300;
+      line-height: 1.8;
+      margin-bottom: 15px;
+      color: #d1d5db;
+    }
+    .info strong {
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    /* Video */
+    .video-wrapper {
+      flex: 1;
+      min-width: 320px;
+      max-width: 700px;
+      background: #112d4e;
+      border-radius: 12px;
+      box-shadow: 0 0 30px rgba(56,189,248,0.5);
+      overflow: hidden;
+      text-align: center;
+      padding-bottom: 20px;
+    }
+    iframe {
+      width: 100%;
+      height: 380px;
+      border: none;
+    }
+    .btn-continuar {
+      margin-top: 15px;
+      background: #38bdf8;
+      color: white;
+      padding: 12px 25px;
+      font-size: 18px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: none; /* oculto hasta que termine el video */
+    }
+
+    /* Formulario */
+    #formulario {
+      display: none;
+      padding: 80px 20px;
+      text-align: center;
+      background: rgba(0, 31, 63, 0.85);
+    }
+    #formulario h2 {
+      color: #38bdf8;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    input, button[type="submit"] {
+      padding: 12px;
+      font-size: 16px;
+      border-radius: 6px;
+      border: none;
+    }
+    input {
+      border: 1px solid #ccc;
+    }
+    button[type="submit"] {
+      background: #2563eb;
+      color: #fff;
+      cursor: pointer;
+    }
+    .success-message {
+      display: none;
+      margin-top: 20px;
+      font-size: 18px;
+      color: #38bdf8;
+      font-weight: bold;
+    }
+
+    footer {
+      background: #001f3f;
+      padding: 40px 20px;
+      color: #fff;
+      text-align: center;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header con logo desde Google Drive -->
+  <header>
+    <img src="https://drive.google.com/uc?export=view&id=1nQUsp4xkMe1l25sxVz46gjd6qHin1WGs" 
+         alt="Greatness Agency">
+  </header>
+
+  <!-- Sección principal -->
+  <div class="container">
+    <!-- Columna Izquierda -->
+    <div class="info">
+      <h2>¿Qué es Concrēta?</h2>
+      <p>
+        <strong>Concrēta</strong> es un producto digital diseñado para que las constructoras alcancen sus metas de ventas de manera más eficiente, optimizando presupuesto y utilizando tecnología de vanguardia.
+      </p>
+      <p>
+        Con <strong>Concrēta</strong> garantizamos un incremento de <strong>+50% en visitas</strong> y <strong>+30% en ventas</strong>.
+      </p>
+    </div>
+
+    <!-- Columna Derecha (Video + botón) -->
+    <div class="video-wrapper">
+      <iframe id="videoFrame" src="https://www.youtube.com/embed/jNQXAC9IVRw?enablejsapi=1"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+      <button id="btnContinuar" class="btn-continuar" onclick="mostrarFormulario()">Ya vi el video, quiero continuar</button>
+    </div>
+  </div>
+
+  <!-- Formulario -->
+  <section id="formulario">
+    <h2>PASO 2: Agenda tu reunión</h2>
+    <p>Selecciona el día y la hora que más te convenga:</p>
+    <form id="agendaForm">
+      <input type="text" name="nombre" placeholder="Tu nombre" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <input type="tel" name="telefono" placeholder="Tu WhatsApp" required>
+      <input type="date" name="fecha" required>
+      <input type="time" name="hora" required>
+      <button type="submit">Agendar</button>
+    </form>
+    <p class="success-message" id="successMessage">
+      ✅ Gracias por su registro, correo electrónico enviado!
+    </p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>
+      Es el momento de crecer al ritmo que deseas.<br>
+      Comienza a generar las ventas que quieres, semana a semana, sin desgastar a tu equipo comercial, utilizando el conocimiento y tecnología que Greatness ofrece para ti.
+      <br><br>
+      Tenemos dos diferentes tipos de productos que te ayudarán a lograr tus objetivos, todo según tus necesidades.
+    </p>
+  </footer>
+
+  <!-- API de YouTube -->
+  <script src="https://www.youtube.com/iframe_api"></script>
+  <script>
+    var player;
+
+    function onYouTubeIframeAPIReady() {
+      player = new YT.Player('videoFrame', {
+        events: {
+          'onStateChange': onPlayerStateChange
+        }
+      });
+    }
+
+    // Mostrar botón solo al terminar el video
+    function onPlayerStateChange(event) {
+      if (event.data === YT.PlayerState.ENDED) {
+        document.getElementById("btnContinuar").style.display = "inline-block";
+      }
+    }
+
+    function mostrarFormulario() {
+      document.getElementById("formulario").style.display = "block";
+      window.scrollTo({ top: document.getElementById("formulario").offsetTop, behavior: "smooth" });
+    }
+
+    // Lógica del form
+    const form = document.getElementById('agendaForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault(); 
+      form.style.display = 'none';
+      successMessage.style.display = 'block';
+    });
+  </script>
+
+</body>
+</html>
