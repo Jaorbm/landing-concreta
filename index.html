@@ -44,7 +44,7 @@
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
-      align-items: center;
+      align-items: flex-start;
       min-height: 70vh;
       padding: 60px 20px;
       gap: 40px;
@@ -85,7 +85,7 @@
       box-shadow: 0 0 30px rgba(56,189,248,0.5);
       overflow: hidden;
       text-align: center;
-      padding-bottom: 20px;
+      padding: 20px;
     }
     iframe {
       width: 100%;
@@ -150,6 +150,44 @@
       text-align: center;
       line-height: 1.6;
     }
+
+    /* Paso con subrayado */
+    .step-title {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .step-title h2 {
+      color: white;
+      font-weight: bold;
+    }
+    .step-title .underline {
+      width: 150px;
+      height: 4px;
+      background: blue;
+      margin: 5px auto;
+      border-radius: 2px;
+    }
+
+      header h2 {
+    margin-top: 20px;
+    font-size: 22px;
+    font-weight: 400;
+    color: #ffffff;
+    line-height: 1.5;
+    text-align: center;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* Estilo especial para resaltar */
+  .highlight {
+    background: linear-gradient(90deg, #ff0080, #ff8c00, #ffcd00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+    padding: 0 6px;
+  }
   </style>
 </head>
 <body>
@@ -158,6 +196,11 @@
   <header>
     <img src="https://drive.google.com/uc?export=view&id=1nQUsp4xkMe1l25sxVz46gjd6qHin1WGs" 
          alt="Greatness Agency">
+        <h2>
+            Si eres Constructor y/o dueño de una Constructora, 
+            <span class="highlight">¡ESTO ES PARA TI!</span> 
+            Con Concrēta garantizamos el incremento del 50% de tus visitas y 30% de tus ventas
+        </h2>
   </header>
 
   <!-- Sección principal -->
@@ -166,15 +209,24 @@
     <div class="info">
       <h2>¿Qué es Concrēta?</h2>
       <p>
-        <strong>Concrēta</strong> es un producto digital diseñado para que las constructoras alcancen sus metas de ventas de manera más eficiente, optimizando presupuesto y utilizando tecnología de vanguardia.
-      </p>
-      <p>
-        Con <strong>Concrēta</strong> garantizamos un incremento de <strong>+50% en visitas</strong> y <strong>+30% en ventas</strong>.
+        <strong>Concrēta</strong>   Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus nec iaculis mauris. 
+  Nulla facilisi. Praesent sed justo vitae magna aliquam blandit. Suspendisse potenti. 
+  Integer tempor, mauris at ultrices viverra, erat massa sagittis nulla, eget varius 
+  lectus purus sed nulla. Sed eget purus justo. Cras porttitor, nisl nec ultricies 
+  fermentum, justo nisi faucibus leo, nec dignissim metus nisl eget arcu. Pellentesque 
+  habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. 
+  Curabitur vel magna quis nisi volutpat ullamcorper. Mauris nec sem ac ligula luctus 
+  vestibulum a sit amet magna. Donec viverra augue ut eros feugiat posuere. Morbi ac 
+  facilisis tortor, sed interdum lorem. Nulla in purus eget nisl tincidunt suscipit.
       </p>
     </div>
 
-    <!-- Columna Derecha (Video + botón) -->
+    <!-- Columna Derecha (Título + Video + botón) -->
     <div class="video-wrapper">
+      <div class="step-title">
+        <h2>PASO 1: MIRA EL VÍDEO</h2>
+        <div class="underline"></div>
+      </div>
       <iframe id="videoFrame" src="https://www.youtube.com/embed/jNQXAC9IVRw?enablejsapi=1"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
@@ -207,6 +259,10 @@
       <br><br>
       Tenemos dos diferentes tipos de productos que te ayudarán a lograr tus objetivos, todo según tus necesidades.
     </p>
+
+      <p style="margin-top:20px; font-size:14px; color:#9ca3af;">
+    © 2025 Greatness Agency. Todos los derechos reservados.
+  </p>
   </footer>
 
   <!-- API de YouTube -->
